@@ -1,0 +1,218 @@
+--------------------------------------------------
+The sentence: hello
+Parsed rule (Tree):
+(Cau (CauChung hello))
+--------------------------------------------------
+The sentence: chào admin
+Parsed rule (Tree):
+(Cau (CauChung chào admin))
+--------------------------------------------------
+The sentence: quán có món gì ?
+Parsed rule (Tree):
+(Cau
+  (CauHoi
+    (CauHoi_Chung
+      (TuHoi_Quan quán)
+      (Cum_QuanHoi có món gì)
+      (OPT_DauHoi (DauHoi ?)))))
+--------------------------------------------------
+The sentence: cơm sườn trứng giá nhiêu tiền ?
+Parsed rule (Tree):
+(Cau
+  (CauHoi
+    (CauHoi_ThongTin
+      (CumDanhTu_Mon_Danhsach
+        (CumDanhTu_Mon
+          (CumDanhTu_MonAn
+            (CumDanhTu_MonAn_2
+              (TenMonAn cơm sườn trứng)
+              (OPT_SoLuong_DonVi_MonAn )
+              (OPT_DacDiemMonAn ))))
+        (OPT_NoiThem ))
+      (OPT_Gia (Gia giá))
+      (TuDeHoi_Gia nhiêu tiền)
+      (OPT_DauHoi (DauHoi ?)))))
+--------------------------------------------------
+The sentence: cho em 2 ly trà sữa ít đường ship vào 19 giờ
+Parsed rule (Tree):
+(Cau
+  (CauDatMon
+    (OPT_ChuNgu )
+    (CumDongTu_Dat cho em)
+    (CumDanhTu_Mon_Danhsach
+      (CumDanhTu_Mon
+        (CumDanhTu_DoUong
+          (CumDanhTu_DoUong_1
+            (SoLuong 2)
+            (DonViDoUong ly)
+            (TenDoUong trà sữa)
+            (OPT_DacDiemDoUong (DacDiemDoUong ít đường)))))
+      (OPT_NoiThem ))
+    (OPT_ThoiGian
+      (Cum_ThoiGian
+        (CumTu_Giao ship vào)
+        (Cum_Gio (So_Gio 19) (ChiTiet_Gio (Tu_Gio giờ) (OPT_Phut )))))))
+--------------------------------------------------
+The sentence: lấy ba suất bún bò nhiều thịt
+Parsed rule (Tree):
+(Cau
+  (CauDatMon
+    (OPT_ChuNgu )
+    (CumDongTu_Dat lấy)
+    (CumDanhTu_Mon_Danhsach
+      (CumDanhTu_Mon
+        (CumDanhTu_MonAn
+          (CumDanhTu_MonAn_1
+            (SoLuong ba)
+            (DonViMonAn suất)
+            (TenMonAn bún bò)
+            (OPT_DacDiemMonAn (DacDiemMonAn nhiều thịt)))))
+      (OPT_NoiThem ))
+    (OPT_ThoiGian )))
+--------------------------------------------------
+The sentence: mua cho em 2 suất hello
+!!! Lỗi Tokenizer: Từ 'mua' không có trong văn phạm.
+Parsed rule: ()
+--------------------------------------------------
+The sentence: cảm ơn ạ
+Parsed rule (Tree):
+(Cau (CauChung cảm ơn ạ))
+--------------------------------------------------
+The sentence: thêm 2 suất bún riêu và 2 ly nước ép ít ngọt
+Parsed rule (Tree):
+(Cau
+  (CauCapNhat
+    (CumDongTu_CapNhat thêm)
+    (CumDanhTu_Mon_Danhsach
+      (CumDanhTu_Mon
+        (CumDanhTu_MonAn
+          (CumDanhTu_MonAn_1
+            (SoLuong 2)
+            (DonViMonAn suất)
+            (TenMonAn bún riêu)
+            (OPT_DacDiemMonAn ))))
+      (OPT_NoiThem
+        (TuNoi và)
+        (CumDanhTu_Mon_Danhsach
+          (CumDanhTu_Mon
+            (CumDanhTu_DoUong
+              (CumDanhTu_DoUong_1
+                (SoLuong 2)
+                (DonViDoUong ly)
+                (TenDoUong nước ép)
+                (OPT_DacDiemDoUong (DacDiemDoUong ít ngọt)))))
+          (OPT_NoiThem ))))))
+--------------------------------------------------
+The sentence: em hủy 1 phần cơm chiên bò và 1 ly trà sữa
+Parsed rule (Tree):
+(Cau
+  (CauHuyMon
+    (OPT_ChuNgu (ChuNgu em))
+    (CumDongTu_Huy hủy)
+    (CumDanhTu_Mon_Danhsach
+      (CumDanhTu_Mon
+        (CumDanhTu_MonAn
+          (CumDanhTu_MonAn_1
+            (SoLuong 1)
+            (DonViMonAn phần)
+            (TenMonAn cơm chiên bò)
+            (OPT_DacDiemMonAn ))))
+      (OPT_NoiThem
+        (TuNoi và)
+        (CumDanhTu_Mon_Danhsach
+          (CumDanhTu_Mon
+            (CumDanhTu_DoUong
+              (CumDanhTu_DoUong_1
+                (SoLuong 1)
+                (DonViDoUong ly)
+                (TenDoUong trà sữa)
+                (OPT_DacDiemDoUong ))))
+          (OPT_NoiThem ))))))
+--------------------------------------------------
+The sentence: 2 phần bún riêu và 2 ly sinh tố ít đá giá bao nhiêu ?
+Parsed rule (Tree):
+(Cau
+  (CauHoi
+    (CauHoi_ThongTin
+      (CumDanhTu_Mon_Danhsach
+        (CumDanhTu_Mon
+          (CumDanhTu_MonAn
+            (CumDanhTu_MonAn_1
+              (SoLuong 2)
+              (DonViMonAn phần)
+              (TenMonAn bún riêu)
+              (OPT_DacDiemMonAn ))))
+        (OPT_NoiThem
+          (TuNoi và)
+          (CumDanhTu_Mon_Danhsach
+            (CumDanhTu_Mon
+              (CumDanhTu_DoUong
+                (CumDanhTu_DoUong_1
+                  (SoLuong 2)
+                  (DonViDoUong ly)
+                  (TenDoUong sinh tố)
+                  (OPT_DacDiemDoUong (DacDiemDoUong ít đá)))))
+            (OPT_NoiThem ))))
+      (OPT_Gia (Gia giá))
+      (TuDeHoi_Gia bao nhiêu)
+      (OPT_DauHoi (DauHoi ?)))))
+--------------------------------------------------
+The sentence: chị cho em nước ép 2 ly ít ngọt
+Parsed rule (Tree):
+(Cau
+  (CauDatMon
+    (OPT_ChuNgu (ChuNgu chị))
+    (CumDongTu_Dat cho em)
+    (CumDanhTu_Mon_Danhsach
+      (CumDanhTu_Mon
+        (CumDanhTu_DoUong
+          (CumDanhTu_DoUong_2
+            (TenDoUong nước ép)
+            (OPT_SoLuong_DonVi_DoUong (SoLuong 2) (DonViDoUong ly))
+            (OPT_DacDiemDoUong (DacDiemDoUong ít ngọt)))))
+      (OPT_NoiThem ))
+    (OPT_ThoiGian )))
+--------------------------------------------------
+The sentence: giao lúc 8 giờ
+Parsed rule: ()
+--------------------------------------------------
+The sentence: cảm ơn ạ
+Parsed rule (Tree):
+(Cau (CauChung cảm ơn ạ))
+--------------------------------------------------
+The sentence: em cho anh 5 phần bún riêu và 5 phần cơm chiên bò và 5 ly sinh tố ít ngọt
+Parsed rule (Tree):
+(Cau
+  (CauDatMon
+    (OPT_ChuNgu (ChuNgu em))
+    (CumDongTu_Dat cho anh)
+    (CumDanhTu_Mon_Danhsach
+      (CumDanhTu_Mon
+        (CumDanhTu_MonAn
+          (CumDanhTu_MonAn_1
+            (SoLuong 5)
+            (DonViMonAn phần)
+            (TenMonAn bún riêu)
+            (OPT_DacDiemMonAn ))))
+      (OPT_NoiThem
+        (TuNoi và)
+        (CumDanhTu_Mon_Danhsach
+          (CumDanhTu_Mon
+            (CumDanhTu_MonAn
+              (CumDanhTu_MonAn_1
+                (SoLuong 5)
+                (DonViMonAn phần)
+                (TenMonAn cơm chiên bò)
+                (OPT_DacDiemMonAn ))))
+          (OPT_NoiThem
+            (TuNoi và)
+            (CumDanhTu_Mon_Danhsach
+              (CumDanhTu_Mon
+                (CumDanhTu_DoUong
+                  (CumDanhTu_DoUong_1
+                    (SoLuong 5)
+                    (DonViDoUong ly)
+                    (TenDoUong sinh tố)
+                    (OPT_DacDiemDoUong (DacDiemDoUong ít ngọt)))))
+              (OPT_NoiThem ))))))
+    (OPT_ThoiGian )))

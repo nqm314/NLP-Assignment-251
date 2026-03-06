@@ -1,0 +1,7 @@
+nltk
+sentence-transformers
+faiss-cpu
+requests
+tqdm
+streamlit
+llama-cpp-python

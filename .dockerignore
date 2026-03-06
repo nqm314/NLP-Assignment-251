@@ -1,0 +1,19 @@
+# Thư mục môi trường ảo
+env/
+.venv/
+venv/
+
+# File rác của Python
+__pycache__/
+*.pyc
+
+# Thư mục output
+output/
+
+# File hệ thống
+.DS_Store
+*.log
+
+# Git
+.git/
+.gitignore

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "PHO_BO",
+    "ten_mon": "Phở bò tái lăn",
+    "gia": 55000,
+    "mo_ta": "Nước dùng hầm xương bò 8 tiếng, thịt bò tái lăn."
+  },
+  {
+    "id": "COM_SUON",
+    "ten_mon": "Cơm sườn bì chả",
+    "gia": 45000,
+    "mo_ta": "Sườn cốt lết nướng than hoa, bì heo, chả trứng."
+  },
+  {
+    "id": "BUN_BO",
+    "ten_mon": "Bún bò Huế",
+    "gia": 50000,
+    "mo_ta": "Chuẩn vị Huế, có giò heo, chả cua."
+  },
+  {
+    "id": "TRA_SUA",
+    "ten_mon": "Trà sữa trân châu",
+    "gia": 30000,
+    "mo_ta": "Trà đen, sữa tươi, trân châu đường đen."
+  },
+  {
+    "id": "CA_PHE",
+    "ten_mon": "Cà phê sữa đá",
+    "gia": 25000,
+    "mo_ta": "Cà phê pha phin truyền thống."
+  },
+  {
+    "id": "COM_GA",
+    "ten_mon": "Cơm gà xối mỡ",
+    "gia": 40000,
+    "mo_ta": "Gà chiên giòn rụm, cơm chiên dương châu."
+  }
+]
