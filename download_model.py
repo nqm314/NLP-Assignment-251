@@ -2,21 +2,21 @@ import os
 import requests
 from tqdm import tqdm
 
-# --- CẤU HÌNH QWEN 2.5 (1.5B Parameters) ---
-# Link tải bản Q5_K_M (Cân bằng nhất) - Nặng chỉ ~1.1 GB
+# --- CONFIGURATION OF Qwen 2.5 (1.5B Parameters) ---
+# Link download Qwen_Q5_K_M ~ 1.1 GB
 MODEL_URL = "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q5_k_m.gguf?download=true"
 MODEL_DIR = "models"
 MODEL_FILENAME = "qwen2.5-1.5b-instruct-q5_k_m.gguf"
 MODEL_PATH = os.path.join(MODEL_DIR, MODEL_FILENAME)
 
 def download_file():
-    print(f"🚀 Đang tải Siêu Phẩm Qwen2.5-1.5B (~1.1 GB)...")
+    print(f"🚀 Downloading Qwen2.5-1.5B (~1.1 GB)...")
     
     if not os.path.exists(MODEL_DIR):
-        os.makedirs(MODEL_DIR)
+        os.makedirs(MODEL_DIR) 
 
     if os.path.exists(MODEL_PATH):
-        print(f"✅ Model đã có sẵn: {MODEL_PATH}")
+        print(f"✅ Model exists: {MODEL_PATH}")
         return
 
     try:
@@ -35,9 +35,9 @@ def download_file():
             for data in response.iter_content(chunk_size=1024*1024):
                 size = f.write(data)
                 bar.update(size)
-        print("\n✅ TẢI THÀNH CÔNG!")
+        print("\n✅ Download completed successfully!")
     except Exception as e:
-        print(f"\n❌ LỖI: {e}")
+        print(f"\n❌ Error: {e}")
 
 if __name__ == "__main__":
     download_file()

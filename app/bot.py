@@ -3,17 +3,14 @@ import os
 import nltk
 import re
 
-# Thêm đường dẫn để import module
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from rag import MenuRAG
 from llm import LocalLLM
 
-# --- 1. Hàm Setup Parser (Giữ nguyên) ---
 def setup_parser():
     grammar_path = 'output/grammar.txt'
     if not os.path.exists(grammar_path):
-        # Trả về None thay vì print để tránh rác terminal nếu chạy docker
         return None
     try:
         with open(grammar_path, 'r', encoding='utf-8') as f:
@@ -22,7 +19,6 @@ def setup_parser():
     except:
         return None
 
-# --- 2. Hàm Xử lý Số từ chữ sang số ---
 def normalize_quantity(sentence):
     # Map các từ chỉ số lượng thông dụng
     word_to_num = {
@@ -33,7 +29,6 @@ def normalize_quantity(sentence):
     
     sentence_lower = sentence.lower()
     for word, num in word_to_num.items():
-        # Thay thế từ nguyên vẹn (vd: "ba" -> "3", tránh thay "ba" trong "ba chỉ")
         sentence_lower = re.sub(rf'\b{word}\b', num, sentence_lower)
     
     return sentence_lower
@@ -81,21 +76,17 @@ def calculate_order_logic(sentence, menu_items):
 
 
 def analyze_intent(parser, sentence, menu_items):
-    # Ưu tiên 1: Chốt đơn / Hẹn giờ (Keyword cứng)
     s_lower = sentence.lower()
     if any(w in s_lower for w in ['giao lúc', 'giao vào', 'ship lúc', 'giờ tối', 'giờ sáng', 'chốt đơn']):
          return "HỆ THỐNG: Khách đang CHỐT ĐƠN hoặc HẸN GIỜ. Hãy xác nhận thời gian và cảm ơn."
 
-    # Ưu tiên 2: Đổi món
     if "đổi" in s_lower and ("thành" in s_lower or "sang" in s_lower):
         return "HỆ THỐNG: Khách muốn ĐỔI MÓN. Hãy xác nhận món cũ đổi sang món mới và tính lại giá (nếu có thông tin)."
 
-    # Ưu tiên 3: Tính tiền bằng Python (Chính xác nhất)
     calc_result = calculate_order_logic(sentence, menu_items)
     if calc_result:
         return calc_result
 
-    # Ưu tiên 4: Parser cú pháp (Dùng để tham khảo cấu trúc nếu Python không bắt được)
     if parser:
         try:
             tokens = sentence.lower().split()
@@ -107,7 +98,7 @@ def analyze_intent(parser, sentence, menu_items):
             
     return "HỆ THỐNG: Khách đang hỏi thông tin hoặc trò chuyện."
 
-# --- MAIN ---
+
 def main():
     print("\n" + "="*50)
     print("   🤖 CHATBOT ĐẶT MÓN (Qwen Hybrid Logic)   ")
@@ -116,7 +107,7 @@ def main():
     try:
         rag = MenuRAG()
         parser = setup_parser()
-        llm = LocalLLM() # Đảm bảo llm.py đang trỏ đúng file Qwen
+        llm = LocalLLM() 
     except Exception as e:
         print(f"\n❌ Lỗi khởi động: {e}")
         return

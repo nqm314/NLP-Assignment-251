@@ -1,11 +1,11 @@
-from llama_cpp import Llama # <-- Thư viện mới
+from llama_cpp import Llama
 import os
 
 class LocalLLM:
     def __init__(self, model_path='models/qwen2.5-1.5b-instruct-q5_k_m.gguf'):
-        print(f"🧠 Đang nạp Qwen2.5 ({model_path})...")
+        print(f"🧠 Downloading Qwen2.5 ({model_path})...")
         if not os.path.exists(model_path):
-            raise FileNotFoundError("❌ Không thấy model! Chạy download_model.py lại đi.")
+            raise FileNotFoundError("❌ Model not found. Please download again!")
 
         # Llama-cpp-python nạp model
         self.model = Llama(
@@ -15,7 +15,7 @@ class LocalLLM:
             n_gpu_layers=0,    # Chạy GPU nếu có
             verbose=False      # Tắt log rác của thư viện
         )
-        print("✅ Qwen đã sẵn sàng phục vụ.")
+        print("✅ Model is ready.")
 
     def generate_response(self, user_query, rag_info, parser_info):
         # 1. Format Menu
@@ -24,9 +24,6 @@ class LocalLLM:
             price_str = "{:,.0f}".format(m['gia']).replace(",", ".")
             formatted_menu.append(f"- {m['ten_mon']} (Giá: {price_str} vnđ)")
         menu_context = "\n".join(formatted_menu)
-        
-        # 2. PROMPT CHUẨN QWEN (ChatML Format)
-        # Qwen cực thích format này: <|im_start|>role\ncontent<|im_end|>
         
         system_content = f"""Bạn là nhân viên phục vụ quán ăn chuyên nghiệp.
 Nhiệm vụ:
